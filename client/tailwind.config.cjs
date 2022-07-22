@@ -8,9 +8,10 @@ module.exports = {
         mainBlack: "#111111",
       },
       fontFamily: {
-        nunito: ["Nunito", "sans-serif"]
+        poppins: ["Poppins", "sans-serif"]
       }
     },
   },
+  variants: ["responsive", "hover", "focus", "active"],
   plugins: [require("tailwind-scrollbar-hide")],
 }

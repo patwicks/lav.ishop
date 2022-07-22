@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { CgMenuRight } from "react-icons/cg";
 import {
   RiSearchLine,
@@ -8,10 +8,10 @@ import {
   RiCloseLine,
 } from "react-icons/ri";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
-
+import LOGO from "../../assets/lav-logo.webp";
 const Header = () => {
   const screenYPosition = useScrollPosition();
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -32,16 +32,22 @@ const Header = () => {
     >
       {/* .left side nav */}
       <div className="flex items-center">
-        <span className="mr-5 font-bold text-brand">Lav.ishop</span>
+        <span className="mr-5 h-[2rem] w-[6rem]">
+          <img
+            className="h-full w-full object-contain"
+            src={LOGO}
+            alt="Lav.ishop logo"
+          />
+        </span>
         <ul className="hidden space-x-3 text-sm font-semibold tracking-[2px] md:flex">
           {list?.map((data, index) => (
             <li
               className="decoration transition-all duration-300 hover:underline "
               key={index}
             >
-              <Link className="active:text-brand" to={data.route}>
+              <NavLink className="text-md" to={data.route}>
                 {data.title}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -70,9 +76,9 @@ const Header = () => {
       </div>
       {/* mobile side menu */}
       <div
-        className={`absolute top-0 bottom-0 right-0 h-screen min-w-[40vh] ${
-          showMenu ? `` : `translate-x-full transform`
-        }  bg-slate-300 p-5 transition-all duration-500 ease-in-out`}
+        className={`fixed right-0  bottom-0 top-0 h-full min-w-[250px] bg-brand p-10 transition-all duration-300 ease-in-out md:hidden ${
+          showMenu ? `` : `translate-x-[400px] transform`
+        }`}
       >
         <div
           className="h-8 w-8 rounded-full p-1 hover:bg-white"
@@ -86,9 +92,9 @@ const Header = () => {
               className="decoration my-2 transition-all duration-300 hover:underline "
               key={index}
             >
-              <Link className="active:text-brand" to={data.route}>
+              <NavLink className="active:text-brand" to={data.route}>
                 {data.title}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
