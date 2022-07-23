@@ -3,7 +3,7 @@ import COLLECTION_WEBP from "../../../assets/collection.webp";
 import { ButtonRegular } from "../../../components/button/ButtonRegular";
 const Banner = () => {
   return (
-    <div className="flex min-h-[30rem] w-full items-center justify-between bg-gradient-to-tr from-slate-200 to-brand/60 px-8 py-10 md:px-10 md:py-20 md:rounded-md">
+    <div className="flex min-h-[30rem] w-full items-center justify-between bg-gradient-to-tr from-slate-200 to-brand/60 px-8 py-5 md:px-10 md:rounded-md">
       {/* text left */}
       <div className="h-full w-full md:w-1/2">
         <h4 className="text-[0.9rem] text-gray-700">Top e-commerce in PH</h4>

@@ -10,13 +10,18 @@ import FaqPage from "./pages/faq/FaqPage";
 import ProfilePage from "./pages/profile/ProfilePage";
 import PageNotAvailable from "./pages/404/PageNotAvailable";
 
+// private route
+import PrivateRoute from "./pages/PrivateRoute";
+
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         {/* main routes */}
         <Route exact path="/" element={<HomePage />} />
-        <Route path="/products" element={<ProductPage />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/products" element={<ProductPage />} />
+        </Route>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/profile" element={<ProfilePage />} />
