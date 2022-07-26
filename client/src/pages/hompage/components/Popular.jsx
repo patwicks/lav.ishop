@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
 import { dataPopular } from "../data/dataPopular";
 const Popular = () => {
   return (

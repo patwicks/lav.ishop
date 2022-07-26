@@ -39,13 +39,13 @@ const Header = () => {
             alt="Lav.ishop logo"
           />
         </span>
-        <ul className="hidden space-x-3 text-sm font-semibold tracking-[2px] md:flex">
+        <ul className="hidden space-x-3 text-sm font-normal tracking-[2px] md:flex">
           {list?.map((data, index) => (
             <li
               className="decoration transition-all duration-300 hover:underline "
               key={index}
             >
-              <NavLink className="text-md" to={data.route}>
+              <NavLink className="text-md active:text-brand" to={data.route}>
                 {data.title}
               </NavLink>
             </li>
@@ -76,7 +76,7 @@ const Header = () => {
       </div>
       {/* mobile side menu */}
       <div
-        className={`fixed right-0  bottom-0 top-0 h-full min-w-[250px] bg-brand p-10 transition-all duration-300 ease-in-out md:hidden ${
+        className={`fixed right-0 z-50 bottom-0 top-0 h-full min-w-[250px] bg-brand p-10 transition-all duration-300 ease-in-out md:hidden ${
           showMenu ? `` : `translate-x-[400px] transform`
         }`}
       >
